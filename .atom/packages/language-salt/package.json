@@ -1,0 +1,41 @@
+{
+  "name": "language-salt",
+  "version": "0.4.0",
+  "private": true,
+  "description": "Atome Language files for SaltStack",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonGretar/language-salt.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+    "language-yaml": "git+https://github.com/atom/language-yaml.git",
+    "atom-jinja2": "git+https://github.com/danielchatfield/atom-jinja2.git"
+  },
+  "readme": "# Salt States language support in Atom\n\nAdds syntax highlighting to [SaltStack](http://saltstack.com) files in Atom.\n\nContributions are greatly appreciated. Please fork this repository and open a\npull request to add snippets, make grammar tweaks, etc.\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/JonGretar/language-salt/issues"
+  },
+  "homepage": "https://github.com/JonGretar/language-salt#readme",
+  "_id": "language-salt@0.4.0",
+  "_shasum": "e96e22a3ef588be6a3cc982eb2310881b8f65275",
+  "_resolved": "file:../d-116710-2377-fhoskk/package.tgz",
+  "_from": "../d-116710-2377-fhoskk/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "node_modules/atom-jinja2/package.json",
+        "node_modules/language-yaml/coffeelint.json",
+        "node_modules/language-yaml/package.json",
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}
