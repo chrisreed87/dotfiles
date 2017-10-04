@@ -2,40 +2,40 @@
   "_args": [
     [
       {
-        "raw": "/private/var/folders/_j/fg5lc7qn1_n26yndy2v4m0cr0000gn/T/d-116822-2030-98ia78/package.tgz",
+        "raw": "/private/var/folders/7p/_y82_6g130n8tp9fz1sl91540000gn/T/d-11758-14962-okh97r.o5ju8wu3di/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/private/var/folders/_j/fg5lc7qn1_n26yndy2v4m0cr0000gn/T/d-116822-2030-98ia78/package.tgz",
-        "spec": "/private/var/folders/_j/fg5lc7qn1_n26yndy2v4m0cr0000gn/T/d-116822-2030-98ia78/package.tgz",
+        "rawSpec": "/private/var/folders/7p/_y82_6g130n8tp9fz1sl91540000gn/T/d-11758-14962-okh97r.o5ju8wu3di/package.tgz",
+        "spec": "/private/var/folders/7p/_y82_6g130n8tp9fz1sl91540000gn/T/d-11758-14962-okh97r.o5ju8wu3di/package.tgz",
         "type": "local"
       },
-      "/private/var/folders/_j/fg5lc7qn1_n26yndy2v4m0cr0000gn/T/apm-install-dir-116822-2030-nu6q7e"
+      "/private/var/folders/7p/_y82_6g130n8tp9fz1sl91540000gn/T/apm-install-dir-11758-14962-1ent8s9.wursw3tyb9"
     ]
   ],
-  "_from": "../d-116822-2030-98ia78/package.tgz",
-  "_id": "language-nginx@0.6.2",
+  "_from": "../d-11758-14962-okh97r.o5ju8wu3di/package.tgz",
+  "_id": "language-nginx@0.8.0",
   "_inCache": true,
   "_installable": true,
   "_location": "/language-nginx",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/private/var/folders/_j/fg5lc7qn1_n26yndy2v4m0cr0000gn/T/d-116822-2030-98ia78/package.tgz",
+    "raw": "/private/var/folders/7p/_y82_6g130n8tp9fz1sl91540000gn/T/d-11758-14962-okh97r.o5ju8wu3di/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/private/var/folders/_j/fg5lc7qn1_n26yndy2v4m0cr0000gn/T/d-116822-2030-98ia78/package.tgz",
-    "spec": "/private/var/folders/_j/fg5lc7qn1_n26yndy2v4m0cr0000gn/T/d-116822-2030-98ia78/package.tgz",
+    "rawSpec": "/private/var/folders/7p/_y82_6g130n8tp9fz1sl91540000gn/T/d-11758-14962-okh97r.o5ju8wu3di/package.tgz",
+    "spec": "/private/var/folders/7p/_y82_6g130n8tp9fz1sl91540000gn/T/d-11758-14962-okh97r.o5ju8wu3di/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-116822-2030-98ia78/package.tgz",
-  "_shasum": "5f559ae0ca19864152d410d3ffeb1c4a460dcdff",
+  "_resolved": "file:../d-11758-14962-okh97r.o5ju8wu3di/package.tgz",
+  "_shasum": "f724bbfd5db38cb583b9240ef7579b7ee54db70d",
   "_shrinkwrap": null,
-  "_spec": "/private/var/folders/_j/fg5lc7qn1_n26yndy2v4m0cr0000gn/T/d-116822-2030-98ia78/package.tgz",
-  "_where": "/private/var/folders/_j/fg5lc7qn1_n26yndy2v4m0cr0000gn/T/apm-install-dir-116822-2030-nu6q7e",
+  "_spec": "/private/var/folders/7p/_y82_6g130n8tp9fz1sl91540000gn/T/d-11758-14962-okh97r.o5ju8wu3di/package.tgz",
+  "_where": "/private/var/folders/7p/_y82_6g130n8tp9fz1sl91540000gn/T/apm-install-dir-11758-14962-1ent8s9.wursw3tyb9",
   "bugs": {
     "url": "https://github.com/hnagato/atom-language-nginx/issues"
   },
@@ -49,11 +49,21 @@
   "license": "MIT",
   "name": "language-nginx",
   "optionalDependencies": {},
-  "readme": "# Nginx syntax support in Atom\n\nAdds syntax highlighting and snippet support to Nginx configuration files.\nPorted from [textmate/nginx](https://github.com/johnmuhl/nginx-tmbundle) for Atom.\n\n##How to use\nGive Nginx configuration files the extension `.conf` or `.nginx`\n",
+  "readme": "# Nginx syntax support in Atom\n\nAdds syntax highlighting and snippet support to Nginx configuration files.\nPorted from [textmate/nginx](https://github.com/johnmuhl/nginx-tmbundle) for Atom.\n\n## How to use\nGive Nginx configuration files the extension `.conf` or `.nginx`\n",
   "readmeFilename": "README.md",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hnagato/atom-language-nginx.git"
   },
-  "version": "0.6.2"
+  "version": "0.8.0",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
 }

@@ -2,7 +2,7 @@
   core:
     telemetryConsent: "no"
   editor:
-    fontSize: 10
+    fontSize: 11
   "exception-reporting":
     userId: "5cdc8d66-0d59-09ce-362b-82aa66e9a402"
   "terminal-plus":
