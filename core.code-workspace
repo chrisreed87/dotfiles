@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "salt"
+		},
+		{
+			"path": "pillar"
+		},
+		{
+			"path": "configurator"
+		},
+        {
+            "path": "containers"
+        }
+	],
+	"settings": {}
+}
