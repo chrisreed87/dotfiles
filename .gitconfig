@@ -1,0 +1,17 @@
+[user]
+	name = Chris Reed
+	email = chrisreed87@gmail.com
+	signingkey = 0A408C96
+[core]
+	editor = /usr/bin/vim
+	precomposeUnicode = true
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[gui]
+	recentrepo = /Users/chris/salt
+	recentrepo = /Users/chris/vault
+[commit]
+	gpgsign = true
