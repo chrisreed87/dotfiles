@@ -112,3 +112,35 @@ function vs {
      fi
      ssh $1.$site.$env
  }
+
+function vpn-connect {
+/usr/bin/env osascript <<-EOF
+tell application "System Events"
+        tell current location of network preferences
+                set VPN to service "DLVR VPN"
+                if exists VPN then connect VPN
+                repeat while (current configuration of VPN is not connected)
+                    delay 1
+                end repeat
+        end tell
+end tell
+EOF
+route get 172.102.232.0/21 | grep -q ppp0 || sudo route add -net 172.102.232.0/21 -interface ppp0
+route get 185.161.106.0/24 | grep -q ppp0 || sudo route add -net 185.161.106.0/24 -interface ppp0
+route get 10.1.0.0 | grep -q ppp0 || sudo route add -net 10.1.0.0 -interface ppp0
+route get 10.10.0.0 | grep -q ppp0 || sudo route add -net 10.10.0.0 -interface ppp0
+route get 10.10.10.0 | grep -q ppp0 || sudo route add -net 10.10.10.0 -interface ppp0
+route get 10.0.0.0 | grep -q ppp0 || sudo route add -net 10.0.0.0 -interface ppp0
+route get 54.0.0.0/8 | grep -q ppp0 || sudo route add -net 54.0.0.0/8 -interface ppp0
+ssh-add
+}
+
+function cleanup-vpn {
+sudo route delete -net 172.102.232.0/21 -interface ppp0
+sudo route delete -net 185.161.106.0/24 -interface ppp0
+sudo route delete -net 10.1.0.0 -interface ppp0
+sudo route delete -net 10.10.0.0 -interface ppp0
+sudo route delete -net 10.10.10.0 -interface ppp0
+sudo route delete -net 10.0.0.0 -interface ppp0
+sudo route delete -net 54.0.0.0/8 -interface ppp0
+}
