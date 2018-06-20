@@ -144,3 +144,13 @@ sudo route delete -net 10.10.10.0 -interface ppp0
 sudo route delete -net 10.0.0.0 -interface ppp0
 sudo route delete -net 54.0.0.0/8 -interface ppp0
 }
+
+function docker-stop-all {
+    docker stop $(docker ps -q)
+}
+function docker-rm-all {
+    docker rm $(docker ps -a -q)
+}
+function docker-rmi-all {
+    docker rmi $(docker images -q -f dangling=true)
+}
