@@ -1,0 +1,6 @@
+original vim
+/usr/bin/vim
+
+brew install vim
+alias vim='/path/to/new/vim' (cellar path probably)
+which vim
