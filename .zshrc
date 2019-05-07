@@ -1,17 +1,26 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/chris/.oh-my-zsh
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/chris/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
@@ -39,24 +48,28 @@ ZSH_THEME="robbyrussell"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws docker git brew vagrant)
-
-# User configuration
-
-# export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
-# export MANPATH="/usr/local/man:$MANPATH"
+plugins=(git docker)
 
 source $ZSH/oh-my-zsh.sh
+fpath+=($ZSH/plugins/docker)
+autoload -U compinit && compinit
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -72,7 +85,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -82,26 +95,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="/usr/local/sbin:$PATH"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-function vs {
-    if [[ $# = 0 ]]
-    then
-        open -a "Visual Studio Code"
-    else
-        local argPath="$1"
-        [[ $1 = /* ]] && argPath="$1" || argPath="$PWD/${1#./}"
-        open -a "Visual Studio Code" "$argPath"
-    fi
-}
-
- con() {
-     prod='lax1 sjc1 dal1 ord1 lga1 iad1 mia1 lon1 fra1 ams1'
-     staging='phx1 ams2'
-     lab='phx2 ams3'
+function con {
+     prod='lax1 sjc1 dal1 ord1 lga1 iad1 mia1 lon1 fra1 ams1 pdx1'
+     staging='phx1 ams2 pdx2'
+     lab='phx2 ams3 pdx3'
      site=`echo $1 | sed 's/-.*//'`
      if [[ " $prod " =~ .*\ $site\ .* ]]; then
          env='dlvr1.net'
@@ -112,28 +110,6 @@ function vs {
      fi
      ssh $1.$site.$env
  }
-
-function vpn-connect {
-/usr/bin/env osascript <<-EOF
-tell application "System Events"
-        tell current location of network preferences
-                set VPN to service "DLVR VPN"
-                if exists VPN then connect VPN
-                repeat while (current configuration of VPN is not connected)
-                    delay 1
-                end repeat
-        end tell
-end tell
-EOF
-route get 172.102.232.0/21 | grep -q ppp0 || sudo route add -net 172.102.232.0/21 -interface ppp0
-route get 185.161.106.0/24 | grep -q ppp0 || sudo route add -net 185.161.106.0/24 -interface ppp0
-route get 10.1.0.0 | grep -q ppp0 || sudo route add -net 10.1.0.0 -interface ppp0
-route get 10.10.0.0 | grep -q ppp0 || sudo route add -net 10.10.0.0 -interface ppp0
-route get 10.10.10.0 | grep -q ppp0 || sudo route add -net 10.10.10.0 -interface ppp0
-route get 10.0.0.0 | grep -q ppp0 || sudo route add -net 10.0.0.0 -interface ppp0
-route get 54.0.0.0/8 | grep -q ppp0 || sudo route add -net 54.0.0.0/8 -interface ppp0
-ssh-add
-}
 
 function cleanup-vpn {
 sudo route delete -net 172.102.232.0/21 -interface ppp0
@@ -147,10 +123,4 @@ sudo route delete -net 54.0.0.0/8 -interface ppp0
 
 function docker-stop-all {
     docker stop $(docker ps -q)
-}
-function docker-rm-all {
-    docker rm $(docker ps -a -q)
-}
-function docker-rmi-all {
-    docker rmi $(docker images -q -f dangling=true)
 }
