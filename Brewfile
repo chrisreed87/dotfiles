@@ -6,6 +6,7 @@ brew "python", link: false
 brew "ansible"
 brew "awscli"
 brew "awless"
+brew "bat"
 brew "cask"
 brew "colordiff"
 brew "derailed/k9s/k9s"
