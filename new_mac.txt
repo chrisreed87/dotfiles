@@ -1,0 +1,38 @@
+Mackup restore
+1password
+Safari extentions:
+  - adguard for safari
+  - jsonpeep
+vscode
+bear
+better touch tool
+cryptomator
+cyberduck
+docker
+firefox
+  - onelogin
+  - notion
+  - duckduckgo privacy essentials
+  - ublock origin
+  - webrtc disabled
+  - facebook container
+  - container tabs
+chrome
+iterm
+keybase
+logi options
+mullvad
+notion
+postman
+qbittorrent
+reeder
+slack
+things
+zoom
+
+Little tweaks
+- iterm
+	- `defaults write com.googlecode.iterm2 AlternateMouseScroll -bool true`
+- dotfiles restore
+- https://ohmyz.sh/
+- https://denysdovhan.com/spaceship-prompt/
