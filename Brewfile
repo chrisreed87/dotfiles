@@ -31,6 +31,7 @@ brew "kube-ps1"
 brew "kubectx"
 brew "kubernetes-cli"
 #brew "kubeseal"
+brew "lnav" 
 brew "mosh"
 brew "mtr", link: false
 brew "mysql-client"
