@@ -3,6 +3,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 brew "python", link: false
+brew "act"
 #brew "ansible"
 brew "aws-cdk"
 brew "awscli"
